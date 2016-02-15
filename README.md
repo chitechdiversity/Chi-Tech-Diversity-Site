@@ -43,3 +43,6 @@ $ bin/www
 You can access <http://localhost:3000> on your web browser.
 
 ![](https://raw.github.com/outsideris/slack-invite-automation/master/screenshots/join-page.jpg)
+
+## Email Validation
+The `/invite` route makes use of the [legit](https://www.npmjs.com/package/legit) Node package to validate the MX record for an email's domain. Rather than using a regex this option has been used for more adequate email validation preprocessing.

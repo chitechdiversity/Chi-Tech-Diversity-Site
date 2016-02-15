@@ -19,6 +19,19 @@ router.get('/rules', function(req, res) {
 });
 
 router.post('/invite', function(req, res) {
+
+  var checkEmail = require('legit');
+  // Checks for the existence of a MX record for the email address' domain
+  checkEmail(req.body.email, function(validation, addresses, err) {
+    if (!validation) {
+      res.render('result', {
+        community: config.community,
+        message: 'Failed. Email domain is invalid.',
+        isFailed: true
+      });
+    }
+  });
+
   if (req.body.email && (!config.inviteToken || (!!config.inviteToken && req.body.token === config.inviteToken))) {
     request.post({
         url: 'https://'+ config.slackUrl + '/api/users.admin.invite',
