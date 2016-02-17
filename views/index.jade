@@ -11,6 +11,7 @@ block content
         input(type="text", name="email", placeholder="Enter Your Email Address")#slack-email.field
         if tokenRequired
           input(type="text", name="token", placeholder="Enter the invite token you were given")#slack-token.field
+        .g-recaptcha(data-sitekey="6Lc1NBgTAAAAAK0u6KHdA3wm-DyzrFcA2J87RpUs")
         input(type="submit", value="Join").submit
 script.
   var tokenRequired = #{tokenRequired};
