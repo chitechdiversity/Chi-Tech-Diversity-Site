@@ -14,5 +14,7 @@ module.exports = {
   //   --compressed
   slacktoken: process.env.SLACK_TOKEN || 'YOUR-ACCESS-TOKEN',
   // an optional security measure - if it is set, then that token will be required to get invited.
-  inviteToken: process.env.INVITE_TOKEN || null
+  inviteToken: process.env.INVITE_TOKEN || null,
+  // the google recaptcha private key
+  googleRecaptchaKey: process.env.GOOGLE_RECAPTCHA_PRIVATE_KEY || 'GOOGLE-RECAPTCHA-PRIVATE-KEY'
 };
