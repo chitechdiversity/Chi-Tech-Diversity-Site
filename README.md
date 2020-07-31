@@ -1,45 +1,26 @@
-Slack Invite Automation
+Chi Tech Diversity Site
 ------------
 
-A tiny web application to invite a user into your slack team.
+The Chicago Tech Diversity Initiative (CTDI) is a group of meetups, organizations and community members dedicated to supporting underrepresented groups in technology and development within the Greater Chicago Area.
 
-Inspired by
-[How I hacked Slack into a community platform with Typeform](https://levels.io/slack-typeform-auto-invite-sign-ups/)
-and
-[Socket.io's slack page](http://socket.io/slack/).
+This repository contains the code for the CTDI website: <http://chitechdiversity.com>.
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+The slack invite integration was forked from [Outsideris' Slack Invite Automation Page](https://github.com/outsideris/slack-invite-automation).
 
-## Setting
-fill out `config.js` as your infomation.
+## Development
 
-* `community`: your community or team name to display on join page.
-* `slackUrl` : your slack team url (ex: socketio.slack.com)
-* `slacktoken` : access token of slack.
-  You can generate it in <https://api.slack.com/web#auth>.
-  **You should generate the token in admin user, not owner.**
-  If you generate the token in owner user, `missing_scope` error will be occurred.
-* `inviteToken`: an optional security measure - if it is set, then that token will be required to get invited.
-  Intended to be provided in person or on a whiteboard or something.
+Clone the respository and change to the directory.
 
-  You can test your token via curl:
+```
+$ git clone git@github.com:chitechdiversity/Chi-Tech-Diversity-Site.git
+$ cd Chi-Tech-Diversity-Site
+```
 
-  ```shell
-   curl -X POST 'https://YOUR-SLACK-TEAM.slack.com/api/users.admin.invite' \
-   --data 'email=EMAIL&token=TOKEN&set_active=true' \
-   --compressed
-  ```
-
-## Run
-[Node.js](http://nodejs.org/) is required.
+[Node.js](http://nodejs.org/) and npm are required. To install and run the application:
 
 ```shell
-$ git clone git@github.com:outsideris/slack-invite-automation.git
-$ cd slack-invite-automation
 $ npm install
-$ bin/www
+$ npm run
 ```
 
 You can access <http://localhost:3000> on your web browser.
-
-![](https://raw.github.com/outsideris/slack-invite-automation/master/screenshots/join-page.jpg)
